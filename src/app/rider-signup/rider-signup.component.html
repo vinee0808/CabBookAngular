@@ -1,0 +1,121 @@
+<app-homecomponent></app-homecomponent>
+<div class="bgimg">
+    <div class="card"
+      style="width: 50%; position: absolute; top: 100px ; left:300px; right: 300px; background-color: rgba(222, 222, 222, .5); border-radius: 10px;">
+      <div class="card-body">
+       
+        <div class="row">
+          <div class="col-xs-2"></div>
+          <div class="col-xs-8">
+  
+  
+  
+              <div class="row">
+                <div class="col-xs-2"></div>
+                <div class="col-xs-8">
+                  <h3>Regestration Form</h3>
+                </div>
+                <div class="col-xs-2"></div>
+              </div>
+           
+            <div class="row">
+              <div class="col-xs-2">
+              </div>
+              <div class="col-xs-8">
+                <form (ngSubmit)='addNewCustomer()' #addForm="ngForm" style="margin: 15px;">
+          <div class="form-group">
+            <label>Enter Your Name: </label><br>
+            <input type="text" class="form-control" [(ngModel)]=customer.name name="Name"
+              placeholder="Enter Your Name" pattern="[a-zA-Z_ ]{5,15}" #name=ngModel required>
+            <span *ngIf="name.touched && name.invalid && (name.errors.required || name.errors.pattern)"
+              class="alert-warning">
+              <p class="error-div" style="color:red ">Invalid Name</p>
+            </span>
+            <hr>
+          </div>
+        
+          <div class="form-group">
+            <label>Enter Your Date Of Birth: </label><br>
+            <input type="date" [(ngModel)]=customer.dob name="Dob" #dob=ngModel [max]="today" [min]="minDate"
+              required>
+            <span *ngIf="dob.touched && dob.invalid && (dob.errors.required)" class="alert-warning">
+              <p class="error-div" style="color:red ">Invalid Date Of Birth</p>
+            </span>
+            <hr>
+          </div>
+  
+        
+           <div class="form-group">
+             <label>Gender: </label><br>
+          <label class="radio-inline"><input type="radio" [(ngModel)]=customer.gender value = "Male" name="optradio" checked>Male</label>
+          <label class="radio-inline"><input type="radio" [(ngModel)]=customer.gender value="Female" name="optradio">Female</label>
+          <label class="radio-inline"><input type="radio" [(ngModel)]=customer.gender value="Others" name="optradio">Others</label>
+        <hr>  
+        </div> 
+        <div class="form-group">
+          <label>Enter Your Contact: </label><br>
+          <input type="text" class="form-control" [(ngModel)]=customer.contactNo name="ContactNo"
+            placeholder="Phone Number" #contact=ngModel pattern="[7-9][0-9]{9}" required>
+          <span
+            *ngIf="contact.touched && contact.invalid && (contact.errors.required || contact.errors.pattern)"
+            class="alert-warning">
+            <p class="error-div" style="color:red ">Invalid Contact</p>
+          </span>
+          <hr>
+        </div>
+        <div class="form-group">
+          <label>Enter Your E-Mail:</label><br>
+          <input type="email" class="form-control" [(ngModel)]=customer.email name="Email"
+            placeholder="e.g. abc@mail.com" #email=ngModel pattern="[a-z0-9]+@[a-z]+.[a-z]{3,5}"
+            required>
+          <span *ngIf="email.touched && email.invalid && (email.errors.required || email.errors.pattern)"
+            class="alert-warning">
+            <p class="error-div" style="color:red ">Invalid E-mail</p>
+          </span>
+          <hr>
+        </div>
+        <div class="form-group">
+          <label>Enter Your Address: </label><br>
+          <input type="text" class="form-control" [(ngModel)]=customer.address name="Address"
+            placeholder="Enter Your Address" #address=ngModel pattern="[A-Z0-9][A-Za-z0-9_ ]{5,20}"
+            required>
+          <span
+            *ngIf="address.touched && address.invalid && (address.errors.required || address.errors.pattern)"
+            class="alert-warning">
+            <p class="error-div" style="color:red ">Invalid Address</p>
+          </span>
+          <hr>
+        </div>
+        
+        <div class="form-group">
+          <label>Enter Your Password: </label><br>
+          <input type="password" class="form-control" [(ngModel)]=customer.password name="Password"
+            placeholder="Enter Password" #password=ngModel pattern="[A-Za-z0-9@_!$]{8,15}" required>
+          <span
+            *ngIf="password.touched && password.invalid && (password.errors.required || password.errors.pattern)"
+            class="alert-warning">
+            <p class="error-div" style="color:red ">Invalid Password</p>
+          </span>
+          <hr>
+        </div>
+        
+          <div class="form-group">
+            <br>
+            <button class="btn btn-success" type="submit" [disabled] = "!addForm.valid">Register Customer</button>
+          </div>
+        </form>
+      </div>
+      <div class="col-xs-3"></div>
+    </div>
+  
+  </div>
+  <div class="col-xs-2"></div>
+  </div>
+  </div>
+  </div>
+  </div> 
+  
+  
+  
+ 
+     
