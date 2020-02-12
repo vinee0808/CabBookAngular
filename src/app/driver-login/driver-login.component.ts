@@ -21,11 +21,21 @@ password: String;
 
   ngOnInit() {
   }
+  
   checkLogin(){
-
-  }
-  fetchDriver(){
-    return this.service.fetchDriver(this.email, this.password).subscribe(data=>{this.driver=data} );
+    this.service.fetchDriver(this.email, this.password).subscribe(data=>{this.driver=data;
+      if(this.driver!=null){
+         
+            alert("Login Successfull!");
+            this.router.navigate(['find-trip']);
+          }
+          else{
+            alert("Invalid Credentials!");
+            this.driver = new Driver();
+          }
+          });
+        
+    
   }
   registerDriver(){
     this.router.navigate(['driver-signup']);

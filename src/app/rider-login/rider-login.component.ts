@@ -10,7 +10,7 @@ import { RiderService } from '../services/rider.service';
   styleUrls: ['./rider-login.component.css']
 })
 export class RiderLoginComponent implements OnInit {
-  customer:Customer;
+ private customer:Customer;
   email:String;
   password: String;
   // invalidLogin = false
@@ -21,14 +21,26 @@ export class RiderLoginComponent implements OnInit {
 
   ngOnInit() {
   }
-  checkLogin(){
-
-  }
+  
   registerCustomer(){
     this.router.navigate(['rider-signup']);
   }
-  fetchCustomer(){
-    return this.service.fetchCustomer(this.email, this.password).subscribe(data=>{this.customer=data} );
-  }
+  checkLogin(){
+    this.service.fetchCustomer(this.email, this.password).subscribe(data=>{this.customer=data;
+    
+      if(this.customer!=null){
+     
+        alert("Login Successfull!");
+        this.router.navigate(['book-cab']);
+      }
+      else{
+        alert("Invalid Credentials!");
+    this.customer= new Customer();
+      }
+      });
+    
+
+}
+
 
 }

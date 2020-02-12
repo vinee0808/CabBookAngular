@@ -12,6 +12,10 @@ import { RiderLoginComponent } from './rider-login/rider-login.component';
 import { DriverLoginComponent } from './driver-login/driver-login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
+import { BookCabComponent } from './book-cab/book-cab.component';
+import { AddReportComponent } from './add-report/add-report.component';
+import { AddPaymentComponent } from './add-payment/add-payment.component';
+import { FindTripComponent } from './find-trip/find-trip.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +24,11 @@ import { FormsModule } from '@angular/forms';
     SignupComponent,
     LoginComponent,
     DriverSignupComponent,
+    AddPaymentComponent,
+    FindTripComponent,
+    BookCabComponent,
     RiderSignupComponent,
+    AddReportComponent,
     RiderLoginComponent,
     DriverLoginComponent
   ],
