@@ -26,18 +26,19 @@ export class RiderLoginComponent implements OnInit {
     this.router.navigate(['rider-signup']);
   }
   checkLogin(){
-    this.service.fetchCustomer(this.email, this.password).subscribe(data=>{this.customer=data;
+    this.service.fetchCustomer(this.email, this.password).subscribe(data=>this.customer=data)
+      //;
     
-      if(this.customer!=null){
+      //if(this.customer!=null){
      
-        alert("Login Successfull!");
-        this.router.navigate(['book-cab']);
-      }
-      else{
-        alert("Invalid Credentials!");
-    this.customer= new Customer();
-      }
-      });
+  //      alert("Login Successfull!");
+       this.router.navigate(['book-cab']);
+     // }
+     // else{
+       // alert("Invalid Credentials!");
+   // this.customer= new Customer();
+   //   }
+     // });
     
 
 }

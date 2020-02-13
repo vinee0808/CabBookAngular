@@ -23,17 +23,17 @@ password: String;
   }
   
   checkLogin(){
-    this.service.fetchDriver(this.email, this.password).subscribe(data=>{this.driver=data;
-      if(this.driver!=null){
+    this.service.fetchDriver(this.email, this.password).subscribe(data=>this.driver=data)
+      // if(this.driver!=null){
          
-            alert("Login Successfull!");
-            this.router.navigate(['find-trip']);
-          }
-          else{
-            alert("Invalid Credentials!");
-            this.driver = new Driver();
-          }
-          });
+      //       alert("Login Successfull!");
+            this.router.navigate(['trip-requests']);
+          // }
+          // else{
+          //   alert("Invalid Credentials!");
+          //   this.driver = new Driver();
+          // }
+          // });
         
     
   }

@@ -12,32 +12,56 @@ import { RiderLoginComponent } from './rider-login/rider-login.component';
 import { DriverLoginComponent } from './driver-login/driver-login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
-import { BookCabComponent } from './book-cab/book-cab.component';
+
 import { AddReportComponent } from './add-report/add-report.component';
 import { AddPaymentComponent } from './add-payment/add-payment.component';
 import { FindTripComponent } from './find-trip/find-trip.component';
+import { TripRequestsComponent } from './trip-requests/trip-requests.component';
+import { HomeComponent } from './admin/home/home.component';
+import { BookingdetailsComponent } from './admin/bookingdetails/bookingdetails.component';
+import { ReportComponent } from './admin/customerIssues/report.component';
+import { ListComponent } from './admin/listDriver/list.component';
+
+import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
+import { BookCabComponent } from './book-cab/book-cab.component';
+import { SolveComponent } from './admin/solveIssues/solve.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HomecomponentComponent,
+    HomeComponent,
     SignupComponent,
     LoginComponent,
     DriverSignupComponent,
     AddPaymentComponent,
     FindTripComponent,
     BookCabComponent,
+    TripRequestsComponent,
     RiderSignupComponent,
     AddReportComponent,
     RiderLoginComponent,
-    DriverLoginComponent
+    DriverLoginComponent,
+    TripRequestsComponent,
+  BookingdetailsComponent,
+  ReportComponent,
+  ListComponent,
+  SolveComponent,
+  AdminLoginComponent
+  
+  
+  
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,NgxPaginationModule, 
   ],
   providers: [],
   bootstrap: [AppComponent]
