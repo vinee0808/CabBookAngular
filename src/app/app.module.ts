@@ -26,6 +26,7 @@ import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
 import { BookCabComponent } from './book-cab/book-cab.component';
 import { SolveComponent } from './admin/solveIssues/solve.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { ListCustomerComponent } from './admin/list-customer/list-customer.component';
 
 
 
@@ -51,7 +52,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
   ReportComponent,
   ListComponent,
   SolveComponent,
-  AdminLoginComponent
+  AdminLoginComponent,
+  ListCustomerComponent
   
   
   

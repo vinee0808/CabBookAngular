@@ -13,9 +13,21 @@ a{
     font-size:18px;
     margin-top: 70px;
 }
-.bgimg {
+/* .bgimg {
     background-image: url('src/assets/img/home.jpg');
     height: 600px;
     width: 100%;
     margin: 0;
+} */
+p {
+    
+    color: white;
+    font-family: verdana;
+    font-size: 300%;
+  
+  }
+  .card {
+    margin: 0 auto; 
+    float: none; 
+    margin-bottom: 10px;
 }

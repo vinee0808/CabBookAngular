@@ -1,7 +1,7 @@
 <!-- <app-homecomponent></app-homecomponent> -->
-<head>
+<!-- <head> -->
   <!-- Font Awesome Icon Library -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <style>
   .checked {
     color: orange;
@@ -73,4 +73,37 @@
     <br><br>
     <button type="submit" class="btn btn-success">Payment</button>
   </form>
-</div>
+</div> -->
+
+  
+<table class="table table-bordered">
+
+  <tr>
+<th>Booking Id</th>
+<th>Cuastomer Id</th>
+<th>Driver Id</th>
+<th>Source</th>
+<th>Destination</th>
+<th>Estimated Time</th>
+<!-- <th>Estimated Fare</th> -->
+<th>Final Fare</th>
+
+<!-- <th>Trip Status</th> -->
+<!-- <th>Rating</th> -->
+      
+    </tr>
+    <tr *ngFor="let booking of bookings ">
+    <td>{{booking.bookingId}}</td>    
+    <td>{{booking.customerId}}</td>  
+    <td>{{booking.driverId}}</td>  
+    <td>{{booking.source}}</td>  
+    <td>{{booking.destination}}</td>  
+    <td>{{booking.estimatedTime}}</td>  
+    <!-- <td>{{booking.estimatedFare}}</td>   -->
+    <td>{{booking.finalFare}}</td> 
+    <!-- <td>{{booking.tripStatus}}</td>  -->
+    <!-- <td>{{booking.rating}}</td>  -->
+     </tr> 
+     <td><button class="btn btn-info" (click)="trip()">Trip Over</button></td> 
+</table>
+<!-- <pagination-controls (pageChange)="p = $event" ></pagination-controls> -->

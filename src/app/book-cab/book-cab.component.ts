@@ -3,6 +3,7 @@ import { Booking } from 'src/app/model/booking.model';
 import { Customer } from 'src/app/model/customer.model';
 import { Router } from '@angular/router';
 import { CustomerRequest } from 'src/app/model/customer_requirement.model';
+import { RiderService } from '../services/rider.service';
 
 
 
@@ -18,9 +19,12 @@ export class BookCabComponent implements OnInit {
   fare:number;
   customer : Customer;
   cabDetails : Booking;
+  
+  cartype : string;
+  estimate : string;
   @Output() showTripStatus = new EventEmitter();
 
-  constructor(private route:Router) { 
+  constructor(private route:Router, private service:RiderService) { 
     this.customer = new Customer();
     this.cabDetails = new Booking();
     this.tripdetails = new CustomerRequest();
@@ -33,9 +37,53 @@ export class BookCabComponent implements OnInit {
   }
 
   estimatePrice(){
-
-    this.route.navigate(['add-payment'])
+    // if(this.tripdetails.model=="SUV"){
+    //   this.estimate = "Rs." + 100+ "/-" + this.tripdetails.model;
+    // }
+    // if(this.tripdetails.model=="Mini"){
+    //   this.estimate = "Rs." + 10+ "/-" + this.tripdetails.model;
+    // }
+    // if(this.tripdetails.model=="Micro"){
+    //   this.estimate = "Rs." + 20+ "/-" + this.tripdetails.model;
+    // }
+    // if(this.tripdetails.model=="Sedan"){
+    //   this.estimate = "Rs." + 30+ "/-" + this.tripdetails.model;
+    // }
+    this.service.saveRequest(this.tripdetails).subscribe(data => 
+     {this.tripdetails = data;
+     if(this.tripdetails.customerId!=null){
+     
+      alert("Cab Booked Successfully!");
+      this.route.navigate(['login']);
+    }
+    
+    else{
+      alert("Invalid Input!");
+      
+    }
+    });
   }
+     
+    //  alert("Cab Booked Successfully!");
+    // this.route.navigate(['add-payment'])
+  //}
+  estimateFare(){
+    if(this.tripdetails.model=="SUV"){
+      this.estimate = "Rs." + 166.7+ "/-" + this.tripdetails.model;
+    }
+    if(this.tripdetails.model=="Mini"){
+      this.estimate = "Rs." + 117.7+ "/-" + this.tripdetails.model;
+    }
+    if(this.tripdetails.model=="Micro"){
+      this.estimate = "Rs." + 120.9+ "/-" + this.tripdetails.model;
+    }
+    if(this.tripdetails.model=="Sedan"){
+      this.estimate = "Rs." + 153.5+ "/-" + this.tripdetails.model;
+    }
+    
+    // this.route.navigate(['add-payment'])
+  }
+
   
   onConfirm(){
     //  this.tripdetails.customerId = this.service.getCustomerId().customerId;

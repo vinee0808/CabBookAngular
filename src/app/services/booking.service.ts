@@ -8,8 +8,5 @@ import { Observable } from 'rxjs';
 export class BookingService {
 
   constructor(private http: HttpClient) { }
-  listBooking():Observable<any>{
-  
-    return this.http.get("http://localhost:8180/booking/getAll");
-  }
+ 
 }

@@ -1,7 +1,28 @@
 <!-- <app-homecomponent></app-homecomponent> -->
-<div class="col-xs-6 well well-lg" name="form-div">
-  <form class="form-horizontal" #tripForm="ngForm" (ngSubmit)="estimatePrice()">
-
+<body style="background-image: url(../../assets/img/taxi.jpg);background-repeat: no-repeat;background-size: cover; height: 750px; width: 1500px;">
+<div class="col-xs-6 well well-lg" name="form-div" style="margin-left: 100px; margin-top: 10px;">
+  <form class="form-horizontal" #tripForm="ngForm" (ngSubmit)="estimateFare()">
+    <!-- <div class="form-group">
+      <label for="customerId" class="control-label col-sm-4">Customer Id</label>
+      <div class="col-sm-6">
+        <select class="form-control" #customerId=ngModel [(ngModel)]=tripdetails.customerId name="customerId"> -->
+          <!-- <option *ngFor="let location of locations" [value]="location">{{location}}</option> -->
+        <!-- </select>
+      </div>
+      <span *ngIf=" customerId.touched && customerId.invalid " class="alert-warning">Invalid Id</span>
+     </div> -->
+    <div class="form-group"> 
+      <label for="customerId" class="control-label col-sm-4">Customer Id</label>
+      <div class="col-sm-6">
+      <input type="text" class="form-control" [(ngModel)]=tripdetails.customerId name="customerId"
+        placeholder="Enter ID"  #customerId=ngModel required>
+        </div>
+      <span *ngIf="customerId.touched && customerId.invalid && (customerId.errors.required || customerId.errors.pattern)"
+        class="alert-warning">
+        <p class="error-div" style="color:red ">Invalid Id</p>
+      </span>
+      
+    </div>
     <div class="form-group">
       <label for="source" class="control-label col-sm-4">Source</label>
       <div class="col-sm-6">
@@ -24,16 +45,16 @@
     <div class="form-group">
       <label for="cartype" class="control-label col-sm-4">Model</label>
       <div class="col-sm-6">
-        <input type="radio" id="cartype-mini" value="mini" name="cartype" #cartype=ngModel ngModel
+        <input type="radio" id="cartype-mini" value="Mini" name="cartype" #cartype=ngModel ngModel
           [(ngModel)]=tripdetails.model required> Mini
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="radio" id="cartype-micro" value="micro" name="cartype" #cartype=ngModel ngModel
+        <input type="radio" id="cartype-micro" value="Micro" name="cartype" #cartype=ngModel ngModel
           [(ngModel)]=tripdetails.model required> Micro
         <br>
-        <input type="radio" id="cartype-sedan" value="sedan" name="cartype" #cartype=ngModel ngModel
+        <input type="radio" id="cartype-sedan" value="Sedan" name="cartype" #cartype=ngModel ngModel
           [(ngModel)]=tripdetails.model required> Sedan
         &nbsp;&nbsp;&nbsp;
-        <input type="radio" id="cartype-suv" value="suv" name="cartype" #cartype=ngModel ngModel
+        <input type="radio" id="cartype-suv" value="SUV" name="cartype" #cartype=ngModel ngModel
           [(ngModel)]=tripdetails.model> SUV
       </div>
       <div *ngIf="cartype.required">Model is required</div>
@@ -41,16 +62,22 @@
     <div class="col-sm-5"></div>
     <div class="col-sm-2">
     </div>
-    <div class="col-sm-1"></div>
-    <div class="col-sm-2">
-      <button class="btn btn-success" type="submit"
-        [disabled]="!tripForm.valid || tripdetails.source===tripdetails.destination">Estimate Price</button>
+    <!-- <div class="col-sm-1"></div> -->
+    <div class="col-sm-4">
+      <button (click)="estimateFare()"  [disabled]="!tripForm.valid || tripdetails.source===tripdetails.destination">Estimate Price</button>
+      {{estimate}}
+     
     </div>
   </form>
+  
+  <button class="btn btn-success" type="submit" (click)="estimatePrice()" 
+        [disabled]="!tripForm.valid || tripdetails.source===tripdetails.destination">Confirm Booking</button>
+    
 </div>
 <div class="col-xs-2"></div>
+
 <!-- </div> -->
-<div class="row">
+<!-- <div class="row"> -->
   <!-- <div class="col-xs-2"></div> -->
   <div class="col-xs-6" *ngIf="showPriceComp">
     <div class="card" style="width: 80rem;" style="background-color: rgba(123, 123, 123, .3);">
@@ -79,8 +106,9 @@
           </tbody>
         </table>
       </div>
-    </div>
+    <!-- </div> -->
   </div>
   <div class="col-xs-2"></div>
 </div>
 
+</body>

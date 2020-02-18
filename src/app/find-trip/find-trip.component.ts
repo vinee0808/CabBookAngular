@@ -22,7 +22,19 @@ export class FindTripComponent implements OnInit {
   }
 
   estimateFare(){
-    this.estimate = "Rs." + 100+ "/-" + this.type;
+    if(this.type=="SUV"){
+      this.estimate = "Rs." + 100+ "/-" + this.type;
+    }
+    if(this.type=="Mini"){
+      this.estimate = "Rs." + 10+ "/-" + this.type;
+    }
+    if(this.type=="Micro"){
+      this.estimate = "Rs." + 20+ "/-" + this.type;
+    }
+    if(this.type=="Sedan"){
+      this.estimate = "Rs." + 30+ "/-" + this.type;
+    }
+    
     console.log(this.estimate);
     console.log(this.source + this.destination);
 

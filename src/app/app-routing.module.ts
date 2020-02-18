@@ -20,6 +20,7 @@ import { ReportComponent } from './admin/customerIssues/report.component';
 import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
 import { BookCabComponent } from './book-cab/book-cab.component';
 import { SolveComponent } from './admin/solveIssues/solve.component';
+import { ListCustomerComponent } from './admin/list-customer/list-customer.component';
 
 
 
@@ -38,6 +39,7 @@ const routes: Routes = [
  {path:'rider-login',component:RiderLoginComponent},
  {path:'driver-login',component:DriverLoginComponent},
   {path:'rider-signup',component:RiderSignupComponent},
+  {path:'list-customer', component: ListCustomerComponent},
   {path:'admin-login',component:AdminLoginComponent},
 
  

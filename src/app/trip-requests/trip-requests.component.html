@@ -12,17 +12,17 @@
   <th>Destination</th>
   
   <th>Customer ID</th>
-  <th>Estimated Fare</th>
+  <!-- <th>Estimated Fare</th> -->
   
 </tr>
-<tr *ngFor="let booking of bookings; let i = index">
-  <td>{{booing.bookingId}}</td>
-  <td>{{booking.source}}</td>
-  <td>{{booking.destination}}</td>
-  <td>{{booking.customerId}}</td>
-  <td>{{booking.estimatedFare}}</td>
+<tr *ngFor="let customerRequest of customerRequests; let i = index">
+  <td>{{customerRequest.requestId}}</td>
+  <td>{{customerRequest.source}}</td>
+  <td>{{customerRequest.destination}}</td>
+  <td>{{customerRequest.customerId}}</td>
+  <!-- <td>Rs.{{estimate}}</td> -->
   
-  <td><button class="btn btn-success" (click)="confirm()">Confirm</button></td>
-  <td><button class="btn btn-success" (click)="cancel()">Cancel</button></td>
+  <td><button class="btn btn-success" (click)="confirm()">Start Trip</button></td>
+  <!-- <td><button class="btn btn-warning" (click)="cancel(customerRequest)">Cancel</button></td> -->
 </tr>
 </table>

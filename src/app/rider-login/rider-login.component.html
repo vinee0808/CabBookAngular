@@ -1,7 +1,8 @@
 <!-- <app-homecomponent></app-homecomponent> -->
+<body style="background-image: url(../../assets/img/cabs.png);background-repeat: no-repeat;background-size: cover; height: 750px;">
 <div class="bgimg">
     <div class="card"
-      style="height: 400px; width: 350px; position: sticky; top: 120px ; left:600px; background-color: rgba(222, 222, 222, .5); border-radius: 10px;">
+      style="height: 400px; width: 350px; position: sticky; top: 10px ; left:500px;  background-color:white; border-radius: 10px;">
       <div class="card-body">
         <h5 class="card-title"
           style="text-align: center; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">USER LOGIN</h5>
@@ -19,8 +20,8 @@
               
               <div class="form-group">
                   <label>Enter Your E-Mail:</label><br>
-                  <input type="text" class="form-control" [(ngModel)]=customer.email name="Email"
-                    placeholder="abc@mail.com" #email=ngModel pattern="[a-z0-9]+@[a-z]+.[a-z]{3,5}"
+                  <input type="text" class="form-control" [(ngModel)]=customer.email name="email"
+                    placeholder="abc@gmail.com" #email=ngModel pattern="[a-z0-9]+@[a-z]+.[a-z]{3,5}"
                     required>
                   <span *ngIf="email.touched && email.invalid && (email.errors.required || email.errors.pattern)"
                     class="alert-warning">
@@ -36,7 +37,7 @@
               </div> -->
               <div class="form-group">
                   <label>Enter Your Password: </label><br>
-                  <input type="password" class="form-control" [(ngModel)]=customer.password name="Password"
+                  <input type="password" class="form-control" [(ngModel)]=customer.password name="password"
                     placeholder="Enter Password" #password=ngModel pattern="[0-9]{4,8}" required>
                   <span
                     *ngIf="password.touched && password.invalid && (password.errors.required || password.errors.pattern)"
@@ -52,7 +53,7 @@
                   <div class="col-xs-7">
                     <button class="btn btn-success" type="submit" [disabled]="!addForm.valid">Login</button>
                   </div>
-                  <div class="col-sx-1"></div>
+                  <!-- <div class="col-sx-1"></div> -->
                 </div>
               </div>
             </form>
@@ -73,8 +74,9 @@
                 <button class="btn btn-primary" (click)="registerCustomer()">User</button>
               </div>
             </div>
-            <div class="col-xs-2"></div>
+            <!-- <div class="col-xs-2"></div> -->
           </div>
         </div>
       </div>
 </div>
+</body>

@@ -7,8 +7,8 @@
       </div>
       <ul class="nav navbar-nav">
      
-         <a href="http://localhost:4200/list" class="navbar-brand" style="font-size: large;">Driver Verification</a>&nbsp;&nbsp;&nbsp;
-         <a href="http://localhost:4200/report" class="navbar-brand" style="font-size: large;">Customer Issues</a>&nbsp;&nbsp;&nbsp;
+         <a href="http://localhost:4200/list" class="navbar-brand" style="font-size: large;">Driver Details</a>&nbsp;&nbsp;&nbsp;
+         <a href="http://localhost:4200/list-customer" class="navbar-brand" style="font-size: large;">Customer Details</a>&nbsp;&nbsp;&nbsp;
          <a href="http://localhost:4200/bookingdetails" class="navbar-brand" style="font-size: large;">Booking Details</a>
               </ul>
       <button id="button" class="btn btn-info" (click)="logOut()">LogOut</button><br><br>
@@ -21,7 +21,7 @@
 
 
 
-<button class="btn btn-info" (click)="addDriver()">Add</button><br><br>
+<!-- <button class="btn btn-info" (click)="addDriver()">Add</button><br><br> -->
 <table class="table table-bordered">
     
   <tr>
@@ -33,13 +33,13 @@
   <th>Contact Number</th>
   <th>Address</th>
   <th>Vehicle Number</th>
-  <th>Driver Status</th>
+  <!-- <th>Driver Status</th> -->
   <th>Email</th>
     <th>Password</th>  
-  <th>No. of trips</th>
+  <!-- <th>No. of trips</th> -->
   <th>DL</th>
-  <th>Rating</th>
-  <th colspan="2">Action</th>
+  <!-- <th>Rating</th> -->
+  <!-- <th colspan="2">Action</th> -->
   
 </tr>
 
@@ -52,15 +52,15 @@
   <td>{{driver.contactNo}}</td>
   <td>{{driver.address}}</td>
   <td>{{driver.vehicleNo}}</td>
-  <td>{{driver.driverStatus}}</td>
+  <!-- <td>{{driver.driverStatus}}</td> -->
   <td>{{driver.email}}</td>
     <td>{{driver.password}}</td>  
-  <td>{{driver.numberOfTrips}}</td>
+  <!-- <td>{{driver.numberOfTrips}}</td> -->
   <td>{{driver.drivingLicense}}</td>
-  <td>{{driver.rating}}</td>
-  
+  <!-- <td>{{driver.rating}}</td> -->
+<!--   
   <td><button class="btn btn-warning" (click)="deleteDriver(driver)">Delete</button></td>
-  <td><button class="btn btn-info" (click)="verifyDriver(driver)">Verify</button></td>
+  <td><button class="btn btn-info" (click)="verifyDriver(driver)">Verify</button></td> -->
 </tr>
 </table>
 <div class="row">

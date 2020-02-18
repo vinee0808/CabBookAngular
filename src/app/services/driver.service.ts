@@ -32,7 +32,7 @@ drivers:Driver[]=[];
     
      listDriver():Observable<any>{
     
-      return this.http.get("http://localhost:8180/admin/getAllDrivers");
+      return this.http.get("http://localhost:8180/driver/getAllDrivers");
     }
   
   
@@ -50,7 +50,7 @@ drivers:Driver[]=[];
       return this.http.get("http://localhost:8180/admin/report");
     }
     listBooking():Observable<any>{
-      return this.http.get("http://localhost:8180/admin/getAllBooking");
+      return this.http.get("http://localhost:8180/driver/getAllBooking");
     }
     
     
