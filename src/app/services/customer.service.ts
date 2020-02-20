@@ -5,6 +5,8 @@ import { Payment } from '../model/payment';
 import { Booking } from '../model/booking.model';
 import { Report } from '../model/report.model';
 import { Customer } from '../model/customer.model';
+import { ContactUsComponent } from '../contact-us/contact-us.component';
+import { ContactUs } from '../model/contactUs.model';
 
 
 @Injectable({
@@ -24,5 +26,8 @@ export class CustomerService {
 
    getCustomer(booking : Booking){
     return this.http.post<Customer>("http://localhost:8180/driver/findCustomer", booking);
+   }
+   saveContact(contactUs: ContactUs){
+     return this.http.post<ContactUs>("http://localhost:8180/customer/contact", contactUs);
    }
 }

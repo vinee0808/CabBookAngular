@@ -27,15 +27,15 @@ export class ListComponent implements OnInit {
    
       
   }
-  deleteDriver(driver: Driver): void {
-    var ans = confirm("Are you sure you want to delete?")
-    if(ans){
-    this.service.deleteDriver(driver.driverId)
-      .subscribe(data => {
-        this.drivers = this.drivers.filter(d => d !== driver);
+  // deleteDriver(driver: Driver): void {
+  //   var ans = confirm("Are you sure you want to delete?")
+  //   if(ans){
+  //   this.service.deleteDriver(driver.driverId)
+  //     .subscribe(data => {
+  //       this.drivers = this.drivers.filter(d => d !== driver);
         
-      })}
-  };
+  //     })}
+  // };
   
   
      verifyDriver(driver: Driver){  

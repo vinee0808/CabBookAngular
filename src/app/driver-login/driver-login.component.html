@@ -1,4 +1,5 @@
 <!-- <app-homecomponent></app-homecomponent> -->
+<app-header></app-header>
 <body style="background-image: url(../../assets/img/cabs.png);background-repeat: no-repeat;background-size: cover; height: 750px;">
 <div class="bgimg">
     <div class="card"
@@ -25,7 +26,7 @@
                     required>
                   <span *ngIf="email.touched && email.invalid && (email.errors.required || email.errors.pattern)"
                     class="alert-warning">
-                    <p class="error-div" style="color:red ">Invalid E-mail</p>
+                    <p class="error-div" style="color:red ">Please enter a valid email</p>
                   </span>
                   <hr>
                 </div>
@@ -42,7 +43,7 @@
                   <span
                     *ngIf="password.touched && password.invalid && (password.errors.required || password.errors.pattern)"
                     class="alert-warning">
-                    <p class="error-div" style="color:red ">Invalid Password</p>
+                    <p class="error-div" style="color:red ">Password should contain minimum 8 characters</p>
                   </span>
                   <hr>
                 </div>

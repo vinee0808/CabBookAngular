@@ -1,6 +1,7 @@
 <!-- <app-homecomponent></app-homecomponent> -->
+<app-header></app-header>
 <body style="background-image: url(../../assets/img/cabs.png);background-repeat: no-repeat;background-size: cover; height: 750px;">
-<div class="bgimg">
+
     <div class="card"
       style="height: 400px; width: 350px; position: sticky; top: 10px ; left:500px;  background-color:white; border-radius: 10px;">
       <div class="card-body">
@@ -25,16 +26,11 @@
                     required>
                   <span *ngIf="email.touched && email.invalid && (email.errors.required || email.errors.pattern)"
                     class="alert-warning">
-                    <p class="error-div" style="color:red ">Invalid E-mail</p>
+                    <p class="error-div" style="color:red ">Please enter a valid email ID</p>
                   </span>
-                  <hr>
+                  <!-- <br> -->
                 </div>
-              <!-- <div class="form-group">
-                <label>Password</label>
-                <input class="form-control" type="password" #password=ngModel [(ngModel)]=customer.password name="password" placeholder="Enter Password"  pattern="[0-9]{4,}" >
-                <span *ngIf="password.touched && password.invalid" class="alert-danger" style="text-align: center;">invalid password!</span>
-                <br>
-              </div> -->
+            
               <div class="form-group">
                   <label>Enter Your Password: </label><br>
                   <input type="password" class="form-control" [(ngModel)]=customer.password name="password"
@@ -42,9 +38,9 @@
                   <span
                     *ngIf="password.touched && password.invalid && (password.errors.required || password.errors.pattern)"
                     class="alert-warning">
-                    <p class="error-div" style="color:red ">Invalid Password</p>
+                    <p class="error-div" style="color:red ">Password should contain minimum 8 characters</p>
                   </span>
-                  <hr>
+               
                 </div>
               
               <div class="form-group">
@@ -57,26 +53,67 @@
                 </div>
               </div>
             </form>
-        
+        <P style="text-align: center;">Or</P>
 
-
+<!-- 
             <div class="row">
               <div class="col-xs-12">
                 <p style="text-align: center;">Register As</p>
               </div>
-            </div>
+            </div> -->
             <!-- <div class="row">
               <div class="col-xs-4">
                 <button class="btn btn-primary" (click)="registerUser()">User</button>
               </div> -->
-              <div class="col-xs-4"></div>
+              <!-- <div class="col-xs-4"></div>
               <div class="col-xs-4">
                 <button class="btn btn-primary" (click)="registerCustomer()">User</button>
-              </div>
+              </div> -->
+
+              <!-- <div class="container mt-5">
+                  
+             
+                    <div class="col-md-4 mt-2 m-auto ">
+                        <button class="loginBtn loginBtn--facebook" (click)="facebook()">
+                            Login with Facebook
+                          </button>
+                    
+                  </div>
+                </div>
+                <br>
+                <div class="container mt-5">
+                  
+                 
+                      <div class="col-md-4 mt-2 m-auto ">
+                          <button class="loginBtn loginBtn--facebook" (click)="google()">
+                              Login with Google
+                            </button>
+                   
+                    </div>
+                  </div> -->
+                  <div class="container mt-5">
+                  
+                 
+                    <div class="col-md-4 mt-2 m-auto ">
+                  <button type="button" class="btn btn-outline-success and-all-other-classes btn-primary"  style="align-content: center;"> 
+                    <a href="https://www.facebook.com//" style="color: inherit"> Login with FaceBook </a>
+                  </button>
+                  </div>
+                  </div>
+                  <br>
+                  <div class="container mt-5">
+                  
+                 
+                    <div class="col-md-4 mt-2 m-auto ">
+                  <button type="button" class="btn btn-outline-success and-all-other-classes btn-primary" style="align-content: center;"> 
+                    <a href="https://accounts.google.com/" style="color:inherit"> Login with Google </a>
+                  </button>
+                  </div>
+                  </div>
             </div>
-            <!-- <div class="col-xs-2"></div> -->
+          
           </div>
         </div>
-      </div>
+   
 </div>
 </body>

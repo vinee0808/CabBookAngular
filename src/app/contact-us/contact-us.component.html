@@ -1,0 +1,44 @@
+<!-- <p style="text-align: center; font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: 20px;">Please fill in the form so that we may contact you</p> -->
+<!-- <hr> -->
+<app-header></app-header>
+<div class="card"
+      style="height: 550px; width: 600px; position: sticky; top: 320px ; left:500px; background-color: white; border-radius: 10px;">
+      <div class="card-body">
+        <br><br>
+            <p style="text-align: center; font-family: Arial, Helvetica, sans-serif ;font-size: 25px;">Please fill in the form so that we may contact you</p>
+            <br>
+<form (ngSubmit)='submit()' #addForm="ngForm">
+    <input type="text" class="form-control" [(ngModel)]=contactUs.name name="Name"
+    placeholder="Your Name" pattern="[A-Za-z_ ]{4,15}" #name=ngModel required>
+  <span *ngIf="name.touched && name.invalid && (name.errors.required || name.errors.pattern)"
+    class="alert-warning">
+    <p class="error-div" style="color:red ">Please enter atleast 4 chars </p>
+  </span>
+  <br>
+  <input type="email" class="form-control" [(ngModel)]=contactUs.email name="Email"
+  placeholder="Your Email" #email=ngModel pattern="[a-z0-9]+@[a-z]+.[a-z]{3,5}"
+  required>
+<span *ngIf="email.touched && email.invalid && (email.errors.required || email.errors.pattern)"
+  class="alert-warning">
+  <p class="error-div" style="color:red ">Please enter a valid email Id ( in 'abc@gmail.com' format)</p>
+</span>
+<br>
+<input type="number" class="form-control" [(ngModel)]=contactUs.number name="number"
+placeholder="Contact Number" #contact=ngModel pattern="[7-9][0-9]{9}" required>
+<span
+*ngIf="contact.touched && contact.invalid && (contact.errors.required || contact.errors.pattern)"
+class="alert-warning">
+<p class="error-div" style="color:red ">Please enter a valid contact numeber only </p>
+</span>
+<br>
+<textarea class="form-control" [(ngModel)]=contactUs.message name="Message"
+placeholder="Message"  #message=ngModel rows="4" cols="80" required ></textarea>
+<span *ngIf="message.touched && message.invalid && (message.errors.required || message.errors.pattern)"
+class="alert-warning">
+<p class="error-div" style="color:red ">Please write something for us </p>
+</span>
+<br>
+<button class="btn btn-success" type="submit" [disabled] = "!addForm.valid">Submit</button>
+</form>
+</div>
+</div>

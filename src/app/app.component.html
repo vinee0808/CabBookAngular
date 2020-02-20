@@ -1,15 +1,41 @@
-
-<nav class="navbar navbar-light" style="background-color:black">
+<!-- 
+<nav class="navbar navbar-light" style="background-color:slategrey">
     
      <a href="#homecomponent">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <!-- <a href="#homecomponent">About us</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+
     <a href="http://localhost:4200/book-cab">Booking</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="http://localhost:4200/add-report">Help</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="http://localhost:4200/admin-login">Admin</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <!-- <button type="button" class="pull-right" style="font-size: larger;color: black" routerLink="/signup" (click)="register()">Sign Up</button>&nbsp;&nbsp;&nbsp; -->
+    <a href="http://localhost:4200/contact-us">Contact us</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <button type="button" class="pull-right" style="font-size: larger;color: black" routerLink="/signup" (click)="register()">Sign Up</button>&nbsp;&nbsp;&nbsp;
     <button type="button" class="pull-right" style="font-size: larger;color: black" routerLink="/signup" >Sign Up</button>&nbsp;&nbsp;&nbsp;
     <button type="button" class="pull-right" style="font-size: larger;color: black" routerLink="/login" >Login</button>&nbsp;&nbsp;&nbsp; 
-    <!-- <div class="bgimg" ></div>  -->
-</nav>
- 
+    <div class="bgimg" ></div> 
+</nav> -->
+
+      <!-- <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <a class="navbar-brand" href="#homecomponent">Cab Booking Application</a>
+              </div>
+              <ul class="nav navbar-nav">
+                  <li>   <a href="http://localhost:4200/book-cab">Booking</a></li>
+                <li ><a href="http://localhost:4200/add-report">Help</a> </li>
+                
+               
+       
+                <li>   <a href="http://localhost:4200/admin-login">Admin</a></li>
+                <li><a href="http://localhost:4200/contact-us">Contact us</a></li>
+                
+              </ul>
+              <button type="button" class="pull-right" style="font-size: larger;color: black" routerLink="/admin-login" >Admin</button>&nbsp;&nbsp;&nbsp; 
+              <button type="button" class="pull-right" style="font-size: larger;color: black" routerLink="/signup" >Sign Up</button>&nbsp;&nbsp;&nbsp;
+    <button type="button" class="pull-right" style="font-size: larger;color: black" routerLink="/login" >Login</button>&nbsp;&nbsp;&nbsp; 
+  
+            </div>
+          </nav> -->
+            
+          <!-- <app-header></app-header> -->
+          <!-- <header *ngIf="!riderService.isCustomerloggedin"></header> -->
 <router-outlet></router-outlet>
+<app-footer></app-footer>

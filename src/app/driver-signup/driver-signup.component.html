@@ -1,4 +1,5 @@
 <!-- <app-homecomponent></app-homecomponent> -->
+<app-header></app-header>
 <body style="background-image: url(../../assets/img/cabs.png);background-repeat: no-repeat;background-size: cover; height: 1200px;">
 <div class="bgimg">
     <div class="card"
@@ -28,10 +29,10 @@
                   <div class="form-group">
                     <label>Enter Your Name: </label><br>
                     <input type="text" class="form-control" [(ngModel)]=driver.name name="Name"
-                      placeholder="Enter Name" pattern="[a-zA-Z_ ]{5,15}" #name=ngModel required>
+                      placeholder="Enter Name" pattern="[A-Za-z_ ]{4,15}" #name=ngModel required>
                     <span *ngIf="name.touched && name.invalid && (name.errors.required || name.errors.pattern)"
                       class="alert-warning">
-                      <p class="error-div" style="color:red ">Invalid Name</p>
+                      <p class="error-div" style="color:red ">Please enter atleast 4 chars</p>
                     </span>
                     <hr>
                   </div>
@@ -43,7 +44,7 @@
                     <input type="date" [(ngModel)]=driver.dob name="Dob" #dob=ngModel [max]="today" [min]="minDate"
                       required>
                     <span *ngIf="dob.touched && dob.invalid && (dob.errors.required)" class="alert-warning">
-                      <p class="error-div" style="color:red ">Invalid Date Of Birth</p>
+                      <p class="error-div" style="color:red ">Please enter a valid Date Of Birth</p>
                     </span>
                     <hr>
                   </div>
@@ -65,7 +66,7 @@
                       required>
                     <span *ngIf="email.touched && email.invalid && (email.errors.required || email.errors.pattern)"
                       class="alert-warning">
-                      <p class="error-div" style="color:red ">Invalid E-mail</p>
+                      <p class="error-div" style="color:red ">Please enter a valid email Id ( in 'abc@gmail.com' format)</p>
                     </span>
                     <hr>
                   </div>
@@ -76,19 +77,19 @@
                       <span
                         *ngIf="password.touched && password.invalid && (password.errors.required || password.errors.pattern)"
                         class="alert-warning">
-                        <p class="error-div" style="color:red ">Invalid Password</p>
+                        <p class="error-div" style="color:red ">Password should contain minimum 8 characters</p>
                       </span>
                       <hr>
                     </div>
   
                   <div class="form-group">
                     <label>Enter Your Contact: </label><br>
-                    <input type="text" class="form-control" [(ngModel)]=driver.contactNo name="ContactNo"
-                      placeholder="Phone Number" #contact=ngModel pattern="[7-9][0-9]{9}" required>
+                    <input type="number" class="form-control" [(ngModel)]=driver.contactNo name="ContactNo"
+                      placeholder="Phone Number" #contact=ngModel pattern="[6-9][0-9]{9}" required>
                     <span
                       *ngIf="contact.touched && contact.invalid && (contact.errors.required || contact.errors.pattern)"
                       class="alert-warning">
-                      <p class="error-div" style="color:red ">Invalid Contact</p>
+                      <p class="error-div" style="color:red ">Please enter a valid contact number, it should contain only numerical digits</p>
                     </span>
                     <hr>
                   </div>
@@ -101,7 +102,7 @@
                     <span
                       *ngIf="address.touched && address.invalid && (address.errors.required || address.errors.pattern)"
                       class="alert-warning">
-                      <p class="error-div" style="color:red ">Invalid Address</p>
+                      <p class="error-div" style="color:red ">Please enter a valid address</p>
                     </span>
                     <hr>
                   </div>
@@ -112,7 +113,7 @@
                       placeholder="DRIVE123MH" #dl=ngModel pattern="[A-Z0-9]{5,10}" required>
                     <span *ngIf="dl.touched && dl.invalid && (dl.errors.required || dl.errors.pattern)"
                       class="alert-warning">
-                      <p class="error-div" style="color:red ">Invalid DL Number</p>
+                      <p class="error-div" style="color:red ">Please enter a valid DL Number in a given format</p>
                     </span>
                     <hr>
                   </div>
@@ -124,7 +125,7 @@
                     <span
                       *ngIf="vehicleNo.touched && vehicleNo.invalid && (vehicleNo.errors.required || vehicleNo.errors.pattern)"
                       class="alert-warning">
-                      <p class="error-div" style="color:red ">Invalid Vehicle Number</p>
+                      <p class="error-div" style="color:red ">Please enter a valid Vehicle Number in a given format</p>
                     </span>
                     <hr>
                   </div>

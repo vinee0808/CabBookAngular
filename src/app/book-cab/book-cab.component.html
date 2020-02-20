@@ -1,4 +1,5 @@
 <!-- <app-homecomponent></app-homecomponent> -->
+<app-header></app-header>
 <body style="background-image: url(../../assets/img/taxi.jpg);background-repeat: no-repeat;background-size: cover; height: 750px; width: 1500px;">
 <div class="col-xs-6 well well-lg" name="form-div" style="margin-left: 100px; margin-top: 10px;">
   <form class="form-horizontal" #tripForm="ngForm" (ngSubmit)="estimateFare()">
@@ -19,7 +20,7 @@
         </div>
       <span *ngIf="customerId.touched && customerId.invalid && (customerId.errors.required || customerId.errors.pattern)"
         class="alert-warning">
-        <p class="error-div" style="color:red ">Invalid Id</p>
+        <p class="error-div" style="color:red ">Please enter a valid Id</p>
       </span>
       
     </div>

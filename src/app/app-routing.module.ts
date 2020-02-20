@@ -21,6 +21,8 @@ import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
 import { BookCabComponent } from './book-cab/book-cab.component';
 import { SolveComponent } from './admin/solveIssues/solve.component';
 import { ListCustomerComponent } from './admin/list-customer/list-customer.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
+import { RouteGuardService } from './services/route-guard.service';
 
 
 
@@ -41,7 +43,7 @@ const routes: Routes = [
   {path:'rider-signup',component:RiderSignupComponent},
   {path:'list-customer', component: ListCustomerComponent},
   {path:'admin-login',component:AdminLoginComponent},
-
+{path: 'contact-us', component: ContactUsComponent},
  
   {path:'bookingdetails',component:BookingdetailsComponent},
   {path:'list',component:ListComponent},

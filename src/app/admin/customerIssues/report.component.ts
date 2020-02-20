@@ -27,7 +27,7 @@ export class ReportComponent implements OnInit {
 
   }
   ngOnInit() {
-    this.service.listReports().subscribe(data => this.reports =data);
+    // this.service.listReports().subscribe(data => this.reports =data);
   }
 
 

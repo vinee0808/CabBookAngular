@@ -14,7 +14,7 @@ export class RiderLoginComponent implements OnInit {
   email:String;
   password: String;
   // invalidLogin = false
-  constructor(private router:Router, private service: RiderService) {
+  constructor(private route:Router, private service: RiderService) {
     this.customer = new Customer();
     
    }
@@ -23,24 +23,54 @@ export class RiderLoginComponent implements OnInit {
   }
   
   registerCustomer(){
-    this.router.navigate(['rider-signup']);
+    this.route.navigate(['rider-signup']);
   }
   checkLogin(){
-    this.service.fetchCustomer(this.customer.email, this.customer.password).subscribe(data=>{this.customer=data;
+  //   this.service.fetchCustomer(this.customer.email, this.customer.password).subscribe(data=>{this.customer=data;
     
-      if(this.customer.customerId>0){
+  //     if(this.customer.customerId>0){
      
-       alert("Login Successfull!");
-       this.router.navigate(['book-cab']);
-     }
-     else{
-       alert("Invalid Credentials!");
-   this.customer= new Customer();
-     }
-     });
+  //      alert("Login Successfull!");
+  //      this.route.navigate(['book-cab']);
+  //    }
+  //    else{
+  //      alert("Invalid Credentials!");
+  //  this.customer= new Customer();
+  //    }
+  //    });
     
+  this.service.fetchCustomer(this.customer.email, this.customer.password).subscribe(data=>{this.customer=data;
+    
+    if(this.customer.customerId>0){
+     sessionStorage.setItem("userName", this.customer.name);
+     sessionStorage.setItem("userEmail", this.customer.email);
+     sessionStorage.setItem("customerId", this.customer.customerId.toString());
+     alert("Login Successfully!!")
+     
+     this.route.navigate(['book-cab']);
+   }
+   else{
+    
+     alert("Invalid Credentials!");
+     this.customer= new Customer();
+   }
+   });
+
 
 }
+
+
+   
+
+// google() {
+//   this.router.navigate(['rider-login']);
+
+// }
+
+// facebook() {
+//   this.router.navigate(['rider-login']);
+
+// }
 
 
 

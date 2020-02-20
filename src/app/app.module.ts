@@ -27,6 +27,9 @@ import { BookCabComponent } from './book-cab/book-cab.component';
 import { SolveComponent } from './admin/solveIssues/solve.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { ListCustomerComponent } from './admin/list-customer/list-customer.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 
@@ -53,7 +56,10 @@ import { ListCustomerComponent } from './admin/list-customer/list-customer.compo
   ListComponent,
   SolveComponent,
   AdminLoginComponent,
-  ListCustomerComponent
+  ListCustomerComponent,
+  ContactUsComponent,
+  HeaderComponent,
+  FooterComponent
   
   
   
