@@ -3,7 +3,8 @@ import { Booking } from 'src/app/model/booking.model';
 import { Customer } from 'src/app/model/customer.model';
 import { Router } from '@angular/router';
 import { CustomerRequest } from 'src/app/model/customer_requirement.model';
-import { RiderService } from '../services/rider.service';
+import { LoginService } from '../services/login.service';
+
 
 
 
@@ -24,7 +25,7 @@ export class BookCabComponent implements OnInit {
   estimate : string;
   @Output() showTripStatus = new EventEmitter();
 
-  constructor(private route:Router, private service:RiderService) { 
+  constructor(private route:Router, private service:LoginService) { 
     this.customer = new Customer();
     this.cabDetails = new Booking();
     this.tripdetails = new CustomerRequest();

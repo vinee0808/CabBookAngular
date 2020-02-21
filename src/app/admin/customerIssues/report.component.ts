@@ -5,7 +5,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Report } from 'src/app/model/report.model';
 import { Driver } from 'src/app/model/driver.model';
-import { DriverService } from 'src/app/services/driver.service';
+import { LoginService } from 'src/app/services/login.service';
+
 
 
 
@@ -22,7 +23,7 @@ export class ReportComponent implements OnInit {
   id:number;
   reports:Report[];
 
-  constructor(private service:DriverService, private route:Router) {
+  constructor(private service:LoginService, private route:Router) {
     this.report= new Report();
 
   }
@@ -36,10 +37,10 @@ export class ReportComponent implements OnInit {
    }
 
   
-  fetchDriver(report: Report){  
-    this.service.setter(report)    
-          this.route.navigate(['solve']);
-  }
+  // fetchDriver(report: Report){  
+  //   this.service.setter(report)    
+  //         this.route.navigate(['solve']);
+  // }
   logOut(){
     this.route.navigate(['login']);
   }

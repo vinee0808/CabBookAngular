@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { RiderService } from 'src/app/services/rider.service';
+
 import { Customer } from 'src/app/model/customer.model';
 import { Router } from '@angular/router';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-list-customer',
@@ -10,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class ListCustomerComponent implements OnInit {
 customers: Customer[];
-  constructor(private service: RiderService, private route: Router) { }
+  constructor(private service: LoginService, private route: Router) { }
 
   ngOnInit() {
     this.service.listCustomer().subscribe(data =>this.customers= data)

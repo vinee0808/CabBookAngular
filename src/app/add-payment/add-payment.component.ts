@@ -4,8 +4,7 @@ import { Customer } from '../model/customer.model';
 import { Payment } from '../model/payment';
 import { Router } from '@angular/router';
 import { TransitService } from '../services/transit.service';
-import { CustomerService } from '../services/customer.service';
-import { DriverService } from '../services/driver.service';
+import { LoginService } from '../services/login.service';
 
 @Component({
   selector: 'app-add-payment',
@@ -20,7 +19,7 @@ export class AddPaymentComponent implements OnInit {
   err: any;
   bookings:Booking[];
 
-  constructor(private service:DriverService, private route:Router) { 
+  constructor(private service:LoginService, private route:Router) { 
     this.service.listBooking().subscribe(data => this.bookings =data);
   }
   

@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { Router } from '@angular/router';
 import { Booking } from 'src/app/model/booking.model';
-import { DriverService } from 'src/app/services/driver.service';
+import { LoginService } from 'src/app/services/login.service';
+
 
 
 @Component({
@@ -15,7 +16,7 @@ export class BookingdetailsComponent implements OnInit {
   bookingId:number;
   bookings:Booking[];
 
-  constructor(private service:DriverService, private route:Router) { }
+  constructor(private service:LoginService, private route:Router) { }
 
   ngOnInit() {
     this.service.listBooking().subscribe(data => this.bookings =data);

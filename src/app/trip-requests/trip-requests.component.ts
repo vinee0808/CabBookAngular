@@ -3,8 +3,9 @@ import { Router } from '@angular/router';
 import { Booking } from '../model/booking.model';
 import { BookingService } from '../services/booking.service';
 import { CustomerRequest } from '../model/customer_requirement.model';
+import { LoginService } from '../services/login.service';
 
-import { RiderService } from '../services/rider.service';
+
 
 @Component({
   selector: 'app-trip-requests',
@@ -16,7 +17,7 @@ booking:  Booking;
 requestId: number;
 customerRequest:CustomerRequest;
 customerRequests:CustomerRequest[];
-  constructor(private router: Router, private  service:RiderService) { 
+  constructor(private router: Router, private  service:LoginService) { 
     this.customerRequest = new CustomerRequest();
   }
 

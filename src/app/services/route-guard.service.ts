@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
-import { DriverService } from './driver.service';
-import { RiderService } from './rider.service';
+import { LoginService } from '../services/login.service';
+
+
 
 
 @Injectable({
@@ -9,10 +10,10 @@ import { RiderService } from './rider.service';
 })
 export class RouteGuardService implements CanActivate {
 
-  constructor(private driverService: DriverService, private riderService: RiderService, private router: Router) { }
+  constructor( private router: Router, private loginService: LoginService) { }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean{
-    if(this.driverService.isDriverloggedin || this.riderService.isRiderloggedin)
+    if(this.loginService.isDriverloggedin || this.loginService.isRiderloggedin)
     return true;
 else{
   alert("Please Login First!");

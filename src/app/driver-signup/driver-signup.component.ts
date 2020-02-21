@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Driver } from '../model/driver.model';
 import { Vehicle } from '../model/vehicle.model';
-import { DriverService } from '../services/driver.service';
+import { LoginService } from '../services/login.service';
+
 
 @Component({
   selector: 'app-driver-signup',
@@ -15,7 +16,7 @@ export class DriverSignupComponent implements OnInit {
   minDate : string;
   vehicle : Vehicle;
   locations : string[] = ["Powai","Andheri", "Juhu", "Airoli", "Kalwa", "Thane", "Kandivali", "Goregoan","Marol", "Oshiwara","Aarey Colony", "IIT Bombay", "Borivali", "Dombivili", "Mulund West", "SGNP", "Kanjurmarg East", "Ghansoli", "Mahape", "Charkop Gaon"];
-  constructor(private router : Router, private service: DriverService) {
+  constructor(private router : Router, private service: LoginService) {
     this.locations.sort();
     this.driver = new Driver();
     this.vehicle = new Vehicle();

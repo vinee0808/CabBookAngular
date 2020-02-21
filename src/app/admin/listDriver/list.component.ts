@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Router } from '@angular/router';
-import { DriverService } from 'src/app/services/driver.service';
+
 import { Driver } from 'src/app/model/driver.model';
+import { LoginService } from 'src/app/services/login.service';
 
 
 
@@ -16,7 +17,7 @@ export class ListComponent implements OnInit {
   driverId:number;
   drivers:Driver[];
   
-    constructor(private service:DriverService, private route:Router) {
+    constructor(private service:LoginService, private route:Router) {
     this.driver= new Driver();
    }
 

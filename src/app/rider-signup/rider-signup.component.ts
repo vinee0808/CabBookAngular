@@ -5,7 +5,8 @@ import { Router } from '@angular/router';
 import { Customer } from '../model/customer.model';
 import { Driver } from '../model/driver.model';
 import { Vehicle } from '../model/vehicle.model';
-import { RiderService } from '../services/rider.service';
+import { LoginService } from '../services/login.service';
+
 
 @Component({
   selector: 'app-rider-signup',
@@ -18,7 +19,7 @@ customer: Customer;
 errorMessage: string;
 
 
-  constructor(private router: Router, private service: RiderService) { 
+  constructor(private router: Router, private service: LoginService) { 
     this.customer= new Customer();
     
     

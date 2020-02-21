@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { Customer } from '../model/customer.model';
-import { RiderService } from '../services/rider.service';
+import { LoginService } from '../services/login.service';
+
 
 @Component({
   selector: 'app-rider-login',
@@ -14,7 +15,7 @@ export class RiderLoginComponent implements OnInit {
   email:String;
   password: String;
   // invalidLogin = false
-  constructor(private route:Router, private service: RiderService) {
+  constructor(private route:Router, private service: LoginService) {
     this.customer = new Customer();
     
    }

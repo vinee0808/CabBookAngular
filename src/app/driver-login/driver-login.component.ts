@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Driver } from '../model/driver.model';
 import { Router } from '@angular/router';
-import { DriverService } from '../services/driver.service';
+import { LoginService } from '../services/login.service';
+
 
 @Component({
   selector: 'app-driver-login',
@@ -14,7 +15,7 @@ export class DriverLoginComponent implements OnInit {
 email:String;
 password: String;
   // invalidLogin = false
-  constructor(private router:Router, private service: DriverService) {
+  constructor(private router:Router, private service: LoginService) {
     this.driver = new Driver();
     
    }

@@ -13,6 +13,7 @@ export class AddReportComponent implements OnInit {
   book: Booking;
   payment: Payment;
   report: Report;
+ 
 
   constructor(private route: Router) { }
 

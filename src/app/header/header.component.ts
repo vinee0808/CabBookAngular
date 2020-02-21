@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DriverService } from '../services/driver.service';
-import { RiderService } from '../services/rider.service';
+import { LoginService } from '../services/login.service';
+
 
 @Component({
   selector: 'app-header',
@@ -9,7 +9,7 @@ import { RiderService } from '../services/rider.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private driverService: DriverService, private riderService: RiderService) { }
+  constructor(private service: LoginService) { }
 
   ngOnInit() {
   }
