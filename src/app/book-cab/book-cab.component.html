@@ -66,12 +66,14 @@
     <!-- <div class="col-sm-1"></div> -->
     <div class="col-sm-4">
       <button (click)="estimateFare()"  [disabled]="!tripForm.valid || tripdetails.source===tripdetails.destination">Estimate Price</button>
-      {{estimate}}
+ <!-- <button (click)="estimateFare()"  [disabled]="!tripForm.valid || tripdetails.source===tripdetails.destination">Estimate Price</button>
+      {{estimate}}      {{estimate}}
+      -->
      
     </div>
   </form>
   
-  <button class="btn btn-success" type="submit" (click)="estimatePrice()" 
+  <button class="btn btn-success" type="submit" (click)="confirmBooking()" 
         [disabled]="!tripForm.valid || tripdetails.source===tripdetails.destination">Confirm Booking</button>
     
 </div>

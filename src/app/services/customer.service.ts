@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { TripDetails } from '../model/tripDetails';
+
 import { Payment } from '../model/payment';
 import { Booking } from '../model/booking.model';
 import { Report } from '../model/report.model';
 import { Customer } from '../model/customer.model';
 import { ContactUsComponent } from '../contact-us/contact-us.component';
 import { ContactUs } from '../model/contactUs.model';
+import { Pricing } from '../model/pricing';
+import { CustomerRequest } from '../model/customer_requirement.model';
 
 
 @Injectable({
@@ -29,5 +31,11 @@ export class CustomerService {
    }
    saveContact(contactUs: ContactUs){
      return this.http.post<ContactUs>("http://localhost:8180/customer/contact", contactUs);
+   }
+   getPrice(cRequest : CustomerRequest){
+     return this.http.post<number>("http://localhost:8180/tripdetails/estimatePrice", cRequest);
+   }
+   saveRequest(cRequest : CustomerRequest){
+    return this.http.post<CustomerRequest>("http://localhost:8180/tripdetails/add", cRequest);
    }
 }

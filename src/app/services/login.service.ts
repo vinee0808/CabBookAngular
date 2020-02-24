@@ -47,9 +47,7 @@ drivers:Driver[]=[];
     registerCustomer(customer : Customer){
       return this.http.post<Customer>("http://localhost:8180/customer/saveCustomer", customer);
      }
-     saveRequest(cRequest : CustomerRequest){
-      return this.http.post<CustomerRequest>("http://localhost:8180/customer/request", cRequest);
-     }
+     
      listRequest():Observable<any>{
     
       return this.http.get("http://localhost:8180/customer/getAllRequests");
