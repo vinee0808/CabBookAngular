@@ -17,13 +17,15 @@
   
   </div> 
   
-  
+  <div class="col-xs-12"  style="margin-left: auto; margin-top: auto;">
+      <div class="card" style="width: 500px;" style="background-color: rgba(123, 123, 123, .3);">
+          <div class="card-body">
   
   
   <!-- <button class="btn btn-info" (click)="addDriver()">Add</button><br><br> -->
   <table class="table table-bordered">
-      
-    <tr>
+      <tbody>
+      <tr class="active">
     
     <th>Customer ID</th>
     <th>Name</th>
@@ -38,7 +40,7 @@
     
   </tr>
   
-  <tr *ngFor="let customer of customers | paginate: { currentPage: p, itemsPerPage: 4 }; let i = index" >
+  <tr *ngFor="let customer of customers | paginate: { currentPage: p, itemsPerPage: 4 }; let i = index" class="success">
    
     <td>{{customer.customerId}}</td>
     <td>{{customer.name}}</td>
@@ -51,7 +53,11 @@
       <td>{{customer.password}}</td>  
    
   </tr>
+  </tbody>
   </table>
+</div>
+</div>
+</div>
   <div class="row">
   <pagination-controls class="pagination" (pageChange)="p = $event" ></pagination-controls>
    

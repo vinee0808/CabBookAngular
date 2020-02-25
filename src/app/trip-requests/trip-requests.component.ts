@@ -4,6 +4,7 @@ import { Booking } from '../model/booking.model';
 import { BookingService } from '../services/booking.service';
 import { CustomerRequest } from '../model/customer_requirement.model';
 import { LoginService } from '../services/login.service';
+import { CustomerService } from '../services/customer.service';
 
 
 
@@ -17,7 +18,7 @@ booking:  Booking;
 requestId: number;
 customerRequest:CustomerRequest;
 customerRequests:CustomerRequest[];
-  constructor(private router: Router, private  service:LoginService) { 
+  constructor(private router: Router, private  service:CustomerService) { 
     this.customerRequest = new CustomerRequest();
   }
 

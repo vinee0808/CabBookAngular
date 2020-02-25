@@ -48,10 +48,7 @@ drivers:Driver[]=[];
       return this.http.post<Customer>("http://localhost:8180/customer/saveCustomer", customer);
      }
      
-     listRequest():Observable<any>{
-    
-      return this.http.get("http://localhost:8180/customer/getAllRequests");
-    }
+  
     // deleteRequest(id: number) {
     //   return this.http.delete("http://localhost:8180/customer/remove/" + '/' + id);
     // }

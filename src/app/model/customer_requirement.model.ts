@@ -7,6 +7,6 @@ export class CustomerRequest{
     public destination : string;
     
     public model : string;
-    public estimatePrice: number; 
+    public price: number; 
     
 }

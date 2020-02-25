@@ -73,8 +73,8 @@
     </div>
   </form>
   
-  <button class="btn btn-success" type="submit" (click)="confirmBooking()" 
-        [disabled]="!tripForm.valid || tripdetails.source===tripdetails.destination">Confirm Booking</button>
+  <!-- <button class="btn btn-success" type="submit" (click)="confirmBooking()" 
+        [disabled]="!tripForm.valid || tripdetails.source===tripdetails.destination">Confirm Booking</button> -->
     
 </div>
 <div class="col-xs-2"></div>
@@ -82,25 +82,27 @@
 <!-- </div> -->
 <!-- <div class="row"> -->
   <!-- <div class="col-xs-2"></div> -->
-  <div class="col-xs-6" *ngIf="showPriceComp">
+  <div class="col-xs-6" *ngIf="showPriceComp" style="margin-left: 100px; margin-top: 10px;">
     <div class="card" style="width: 80rem;" style="background-color: rgba(123, 123, 123, .3);">
       <div class="card-body">
         <table class="table table-bordered">
           <tbody>
             <tr class="active">
+                <th scope="row">Customer ID</th>
               <th scope="row">Source</th>
               <th scope="row">Destination</th>
               <th scope="row">Model</th>
               <th scope="row">Price</th>
             </tr>
             <tr class="success">
+                <td>{{tripdetails.customerId}}</td>
               <td>{{tripdetails.source}}</td>
               <td>{{tripdetails.destination}}</td>
               <td>{{tripdetails.model}}</td>
               <td>Rs. {{fare}}</td>
             </tr>
             <tr class="success">
-              <td colspan="4">
+              <td colspan="5">
                 <p style="text-align: center;">
                 <button class="btn btn-primary" (click)="onConfirm()">Confirm</button>
               </p>

@@ -55,21 +55,8 @@ export class BookCabComponent implements OnInit {
     // }
     // if(this.tripdetails.model=="Sedan"){
     //   this.estimate = "Rs." + 30+ "/-" + this.tripdetails.model;
-    // }
-    this.services.saveRequest(this.tripdetails).subscribe(data => 
-     {this.tripdetails = data;
-     if(this.tripdetails.customerId!=null){
-     
-      alert("Cab Booked Successfully!");
-      this.route.navigate(['login']);
-    }
+     }
     
-    else{
-      alert("Invalid Input!");
-      
-    }
-    });
-  }
      
     //  alert("Cab Booked Successfully!");
     // this.route.navigate(['add-payment'])
@@ -89,15 +76,15 @@ export class BookCabComponent implements OnInit {
     // }
     
     // this.route.navigate(['add-payment'])
-    this.services.saveRequest(this.tripdetails).subscribe(data => 
-      this.tripdetails = data);
+    // this.services.saveRequest(this.tripdetails).subscribe(data => 
+    //   this.tripdetails = data);
     this.services.getPrice(this.tripdetails).subscribe(data => 
       this.fare = data);
       this.showPriceComp=true;
   }
 
   
-// onConfirm(){
+onConfirm(){
     //  this.tripdetails.customerId = this.service.getCustomerId().customerId;
     //this.service.saveBookingRequest(this.tripdetails).subscribe(p => this.tripdetails =p);
   //  this.tripdetail.customerId=+sessionStorage.getItem("customerId");
@@ -113,6 +100,20 @@ export class BookCabComponent implements OnInit {
     // this.route.navigate(['customer']);
     // this.showPriceComp=false;
  // }
-
+ this.tripdetails.price=this.fare;
+ this.services.saveRequest(this.tripdetails).subscribe(data => 
+  {this.tripdetails = data;
+  if(this.tripdetails.customerId!=null){
+  
+   alert("Cab Booked Successfully!");
+   this.route.navigate(['login']);
+ }
+ 
+ else{
+   alert("Invalid Input!");
+   
+ }
+ });
+}
 
 }

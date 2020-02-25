@@ -9,6 +9,7 @@ import { ContactUsComponent } from '../contact-us/contact-us.component';
 import { ContactUs } from '../model/contactUs.model';
 import { Pricing } from '../model/pricing';
 import { CustomerRequest } from '../model/customer_requirement.model';
+import { Observable } from 'rxjs';
 
 
 @Injectable({
@@ -38,4 +39,9 @@ export class CustomerService {
    saveRequest(cRequest : CustomerRequest){
     return this.http.post<CustomerRequest>("http://localhost:8180/tripdetails/add", cRequest);
    }
+   listRequest():Observable<any>{
+    
+    return this.http.get("http://localhost:8180/tripdetails/allRequests");
+  }
+ 
 }

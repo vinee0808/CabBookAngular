@@ -20,11 +20,15 @@
 
 
 
-
-<!-- <button class="btn btn-info" (click)="addDriver()">Add</button><br><br> -->
-<table class="table table-bordered">
-    
-  <tr>
+  <div class="col-xs-12"  style="margin-left: auto; margin-top: auto;">
+      <div class="card" style="width: 500px;" style="background-color: rgba(123, 123, 123, .3);">
+          <div class="card-body">
+  
+  
+  <!-- <button class="btn btn-info" (click)="addDriver()">Add</button><br><br> -->
+  <table class="table table-bordered">
+      <tbody>
+      <tr class="active">
   
   <th>Driver ID</th>
   <th>Name</th>
@@ -43,7 +47,7 @@
   
 </tr>
 
-<tr *ngFor="let driver of drivers | paginate: { currentPage: p, itemsPerPage: 4 }; let i = index" >
+<tr *ngFor="let driver of drivers | paginate: { currentPage: p, itemsPerPage: 4 }; let i = index" class="success" >
  
   <td>{{driver.driverId}}</td>
   <td>{{driver.name}}</td>
@@ -62,7 +66,11 @@
   <td><button class="btn btn-warning" (click)="deleteDriver(driver)">Delete</button></td>
   <td><button class="btn btn-info" (click)="verifyDriver(driver)">Verify</button></td> -->
 </tr>
+</tbody>
 </table>
+</div>
+</div>
+  </div>
 <div class="row">
 <pagination-controls class="pagination" (pageChange)="p = $event" ></pagination-controls>
  

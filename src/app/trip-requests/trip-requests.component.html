@@ -1,29 +1,50 @@
 <!-- <app-homecomponent></app-homecomponent> -->
 <app-header></app-header>
+<br>
+<h3 style="text-align: center;"> Customer Requests</h3>
+<br>
+
+<div class="col-xs-12"  style="margin-left: auto; margin-top: auto;">
+<div class="card" style="width: 500px;" style="background-color: rgba(123, 123, 123, .3);">
+    <div class="card-body">
+   
+
+
+
 <table class="table table-bordered">
-    
+    <tbody>
   
   <!-- <tr>
     <td (click)="sortByName()"><button type="submit" class="btn btn-success">sortByName</button></td>
   </tr> -->
    
-  <tr>
+  <tr class="active">
+    
   <th>Booking Id</th>
+  <th>Customer ID</th>
   <th>Source</th>
   <th>Destination</th>
-  
-  <th>Customer ID</th>
+  <th>Price</th>
+  <th></th>
   <!-- <th>Estimated Fare</th> -->
   
 </tr>
-<tr *ngFor="let customerRequest of customerRequests; let i = index">
+<tr *ngFor="let customerRequest of customerRequests; let i = index" class="success">
+  
   <td>{{customerRequest.requestId}}</td>
+  <td>{{customerRequest.customerId}}</td>
   <td>{{customerRequest.source}}</td>
   <td>{{customerRequest.destination}}</td>
-  <td>{{customerRequest.customerId}}</td>
+  <td>{{customerRequest.price}}</td>
+ 
   <!-- <td>Rs.{{estimate}}</td> -->
   
   <td><button class="btn btn-success" (click)="confirm()">Start Trip</button></td>
   <!-- <td><button class="btn btn-warning" (click)="cancel(customerRequest)">Cancel</button></td> -->
 </tr>
+</tbody> 
 </table>
+
+</div>
+</div>
+</div>
