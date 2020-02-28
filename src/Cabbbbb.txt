@@ -1,0 +1,68 @@
+{"name": "Abc",
+"password": "abcdes",
+"dob":"1990-02-02",
+"gender":"Male",
+"email":"abc@gmail.com",
+"contactNo":"9898989898",
+"address":"Mumbai",
+"driverStatus":"Verified",
+"vehicleNo":"MH12AB1234",
+"drivingLicense":"MH12345",
+"rating":8,
+"noOfTrips":5
+	
+}
+
+{"name": "Ramaa",
+"password": "abcdeus",
+"dob":"1990-02-03",
+"gender":"Male",
+"email":"rd@gmail.com",
+"contactNo":"9898989898",
+"address":"Delhi",
+"wallet":6.5
+
+}
+
+
+{
+"source":"Airoli",
+"destination":"Marol",
+"tripStatus":"Start",
+"estimatedFare":149.5,
+"finalFare":150.8,
+"driverId":305,
+"driverStatus":"Free",
+"customerId":102,
+"estimatedTime":45,
+"finalTime":45.5,
+"rating":7.0,
+"issues": "Payment"
+
+}
+
+
+{
+	
+	"customerId":112,
+"source":"Andheri",
+"destination":"Airoli",
+"vehicleSize": 6,
+"model":"Micro"
+
+
+}
+
+
+insert into customer_request values(1, 102, 'Marol', 'Micro', 'Airoli');
+insert into pricing values(1, 30.1, 'Micro', 15, 5);
+insert into pricing values(2, 25.1, 'Mini', 15, 5);
+insert into pricing values(3, 35.1, 'SUV', 15, 5);
+insert into pricing values(4, 45.1, 'Sedan', 15, 5);
+
+insert into location values(1, 'Marol', 1, 3);
+insert into location values(2, 'Andheri', 4, 8); 
+insert into location values(3, 'Airoli', 10, 11); 
+insert into location values(4, 'Ghansoli', 13, 15);
+insert into location values(5, 'Ghatkopar', 7, -1);
+
